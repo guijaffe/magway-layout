@@ -60,7 +60,7 @@ const cardLoader = (containerSelector, buttonSelector, maxCards = 30) => {
 		const card = document.createElement('div');
 		card.classList.add('card');
 
-		const imageUrl = `https://picsum.photos/seed/${post.id}/1200`;
+		const imageUrl = `https://loremflickr.com/537/519?lock=${post.id}`;
 		const postDate = new Date();
 		const options = { year: 'numeric', month: 'long', day: 'numeric' };
 		const formattedDate = postDate.toLocaleDateString('en-US', options);
