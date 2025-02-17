@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magway</title>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__container">
+    <button class="btn header__burger" aria-label="Открыть меню">
+      <svg>
+        <use href="icons/sprite.svg#burger"></use>
+      </svg>
+    </button>
+
+    <!-- Логотип -->
+    <div class="header__logo">
+      <a href="/">
+        <img src="src/assets/img/logo.png" alt="Главная страница">
+      </a>
+    </div>
+
+    <!-- Навигация -->
+    <nav class="header__nav">
+      <ul class="header__menu">
+        <li class="header__menu-item"><a href="#">Услуги</a></li>
+        <li class="header__menu-item"><a href="#">Абонементы</a></li>
+        <li class="header__menu-item"><a href="#">Почему мы</a></li>
+        <li class="header__menu-item"><a href="#">Оборудование</a></li>
+        <li class="header__menu-item"><a href="#">Акции</a></li>
+        <li class="header__menu-item"><a href="#">FAQ</a></li>
+        <li class="header__menu-item"><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__buttons">
+      <a href="tel:+123456789" class="header__btn btn btn--icon">
+          <svg width="20" height="20">
+            <use href="icons/sprite.svg#phone"></use>
+          </svg>
+      </a>
+      <a class="header__btn btn btn--primary" data-modal-open>
+        <span class="header__btn-text">Оставить заявку</span>
+      </a>
+    </div>
+  </div>
+
+</header>
+
+<main class="main">
+  <section class="hero">
+    <div class="container hero__container">
+      <h2 class="hero__title">Полет Илона Маска
+        и DOGIE COIN
+      </h2>
+      <p class="hero__subtitle">В прошлый четверг все офигели от полета DOGIE COIN на марс.</p>
+      <button class="btn btn--primary hero__button" data-modal-open>
+        <span class="hero__btn-text">
+          Оставить заявку
+        </span>
+      </button>
+    </div>
+  </section>
+
+  <section class="cards">
+    <div class="cards__container container">
+      <h2 class="cards__title">Карточки</h2>
+      <div class="cards__grid" id="card-container">
+
+      </div>
+      <div class="cards__button">
+        <button class="btn btn--primary cards__button" id="load-more">
+          <span>Загрузить ещё</span>
+        </button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="modal" id="modal">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Закрыть модальное окно">
+      <svg width="24" height="24">
+        <use href="icons/sprite.svg#close-x"></use>
+      </svg>
+    </button>
+    <h2 class="modal__title">Оставить заявку</h2>
+    <form class="modal__form">
+      <input type="text" class="modal__input" placeholder="Ваше имя" required>
+      <input type="tel" class="modal__input" placeholder="Ваш телефон" required>
+      <button type="submit" class="btn btn--primary modal__submit">Отправить</button>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="/src/js/main.js"></script>
+</body>
+</html>
+

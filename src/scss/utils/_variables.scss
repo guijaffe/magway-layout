@@ -1,0 +1,24 @@
+$font-primary: "Montserrat", sans-serif;
+$font-secondary: "Mulish", sans-serif;
+
+// colors
+$bg-color: #131313;
+$primary-color: #C2AB81;
+$text-color: #fff;
+$font-color-dark: #171717;
+$font-color-secondary: #666;
+$border-color: #808080;
+
+// sizes
+$font-sm: 12px;
+$font-md: 14px;
+$font-lg: 16px;
+$font-xl: clamp(20px, 5vw, 36px);
+
+$heading-lg: clamp(20px, 5vw, 42px);
+
+$container-width: 1720px;
+$btn-padding: 21px clamp(10px, 5vw, 68px);
+$btn-padding-icon: 16px 21px;
+$btn-padding-icon-sm: 15px 47px;
+$skew-angle: 21deg;

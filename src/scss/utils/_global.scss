@@ -1,0 +1,30 @@
+@use "mixins";
+@use "variables";
+@use "fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: variables.$bg-color;
+  font-family: variables.$font-primary;
+  color: variables.$text-color;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: variables.$text-color;
+}
+
+.container {
+  @include mixins.container;
+}
+
+h2 {
+  @include mixins.font($size: variables.$heading-lg, $weight: 700);
+  text-transform: uppercase;
+}

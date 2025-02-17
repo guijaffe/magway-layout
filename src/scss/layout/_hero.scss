@@ -1,0 +1,41 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+.hero {
+  @include mixins.flex($align: center);
+  background: linear-gradient(0deg, variables.$bg-color 15%, rgba(19, 19, 19, 0) 50%),
+              url("@/assets/img/hero-bg.webp") no-repeat;
+  height: 88vh;
+  max-height: 1048px;
+  text-align: center;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+
+  &__container {
+    @include mixins.flex($direction: column, $align: flex-start);
+    width: 100%;
+    gap: 40px;
+    place-self: end;
+    padding-bottom: clamp(55px, 5vw, 96px);
+    text-align: start;
+  }
+
+  &__title {
+    white-space: pre-line;
+  }
+
+  &__subtitle {
+    @include mixins.font($size: 16px);
+    opacity: 0.79;
+    width: 60%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero {
+    &__subtitle {
+      width: 100%;
+      font-size: variables.$font-md;
+    }
+  }
+}

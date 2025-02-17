@@ -1,0 +1,55 @@
+@use "variables";
+
+@mixin flex(
+  $direction: null,
+  $justify: null,
+  $align: null,
+  $wrap: null,
+  $gap: null
+) {
+  display: flex;
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+  @if $justify {
+    justify-content: $justify;
+  }
+  @if $align {
+    align-items: $align;
+  }
+  @if $wrap {
+    flex-wrap: $wrap;
+  }
+  @if $gap {
+    gap: $gap;
+  }
+}
+
+@mixin container {
+  max-width: variables.$container-width;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+@mixin font($family: variables.$font-primary, $size: 16px, $weight: normal, $line-height: 150%) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+@mixin skewed($deg: variables.$skew-angle) {
+  transform: skew(-$deg);
+  display: inline-block;
+
+  & > span {
+    display: inline-block;
+    transform: skew($deg);
+  }
+
+  & svg {
+    fill: variables.$text-color;
+    transform: skew($deg);
+  }
+}

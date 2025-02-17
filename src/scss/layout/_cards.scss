@@ -1,0 +1,84 @@
+@use "../utils/variables";
+@use "../utils/mixins";
+
+.cards {
+  &__grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  &__title {
+    padding: 134px 0 60px 0;
+  }
+
+  &__button {
+    text-align: center;
+    margin: 38px 0 43px 0;
+  }
+}
+
+.card {
+  @include mixins.flex($direction: column);
+  background-color: white;
+  min-width: 100%;
+
+  &__image-img {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+  }
+
+  &__category {
+    @include mixins.font($family: variables.$font-secondary, $size: variables.$font-md, $line-height: 186%, $weight: 700);
+    color: variables.$font-color-dark;
+  }
+
+  &__title {
+    @include mixins.font($family: variables.$font-secondary, $size: variables.$font-lg, $line-height: 162%);
+    color: variables.$font-color-dark;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__description {
+    @include mixins.font($family: variables.$font-primary, $size: variables.$font-md, $line-height: 171%);
+    color: variables.$font-color-secondary;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__author {
+    @include mixins.font($family: variables.$font-primary, $size: variables.$font-sm, $line-height: 200%);
+    color: variables.$font-color-secondary;
+  }
+
+  &__body {
+    @include mixins.flex($direction: column, $justify: space-between);
+    height: 100%;
+    padding: 25px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .cards {
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

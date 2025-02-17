@@ -1,0 +1,88 @@
+@use "variables";
+@use "mixins";
+
+.btn {
+  border: none;
+  cursor: pointer;
+  @include mixins.font(variables.$font-primary, variables.$font-sm, 700, 150%);
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.btn--primary {
+  background-color: variables.$primary-color;
+  color: variables.$text-color;
+  position: relative;
+  padding: variables.$btn-padding;
+  @include mixins.skewed;
+  transition: background-color 0.5s ease, color 0.5s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 5px;
+    height: 100%;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+  &:hover {
+    color: black;
+
+    &::after {
+      width: 100%;
+      opacity: 0.5;
+      transform: translateX(-10px);
+    }
+  }
+}
+
+.btn--secondary {
+  @include mixins.font($family: variables.$font-secondary, $size: variables.$font-md);
+  background-color: #171717;
+  padding: 16px;
+  text-transform: inherit;
+
+  &:hover {
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+  }
+}
+
+.btn--icon {
+  padding: variables.$btn-padding-icon;
+  background-color: transparent;
+  opacity: 0.4;
+  border: 1px solid variables.$text-color;
+  @include mixins.skewed;
+  transition: background-color 0.5s ease, color 0.5s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    transition: width 0.3s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+  &:hover {
+    color: black;
+
+    &::after {
+      width: 100%;
+      opacity: 0.5;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .btn--primary {
+    padding: variables.$btn-padding-icon-sm;
+  }
+}
