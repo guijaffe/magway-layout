@@ -75,7 +75,7 @@ const cardLoader = (containerSelector, buttonSelector, maxCards = 30) => {
 				<div class="card__category">${categoryHtml}</div> 
 				<h3 class="card__title">${post.title}</h3>
 				<p class="card__description">${post.body}</p>
-				<p class="card__author">Posted by <strong>${user.name}</strong>, on ${formattedDate}</p>
+				<cite class="card__author">Posted by <strong>${user.name}</strong>, on ${formattedDate}</cite>
 				<a href="#" class="card__btn btn btn--secondary">Continue reading</a>
 			</div>
 		`;

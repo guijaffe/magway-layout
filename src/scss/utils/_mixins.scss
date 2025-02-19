@@ -32,11 +32,12 @@
   padding: 0 40px;
 }
 
-@mixin font($family: variables.$font-primary, $size: 16px, $weight: normal, $line-height: 150%) {
+@mixin font($family: variables.$font-primary, $size: 16px, $weight: normal, $line-height: 150%, $style: normal) {
   font-family: $family;
   font-size: $size;
   font-weight: $weight;
   line-height: $line-height;
+  font-style: $style;
 }
 
 @mixin skewed($deg: variables.$skew-angle) {
