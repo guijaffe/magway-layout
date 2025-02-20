@@ -30,6 +30,9 @@
   max-width: variables.$container-width;
   margin: 0 auto;
   padding: 0 40px;
+  @media (max-width: 767.98px) {
+    padding: 0 16px;
+  }
 }
 
 @mixin font($family: variables.$font-primary, $size: 16px, $weight: normal, $line-height: 150%, $style: normal) {
